@@ -89,3 +89,26 @@ body {
 .animar {
     animation: aparecer 0.4s ease-out;
 }
+.caixa-perguntas {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    max-height: 90px;  /* Limita a altura para acionar a barra */
+    overflow-y: auto;  /* Ativa a rolagem */
+    padding-right: 8px;
+}
+
+/* Barra de rolagem específica da pergunta */
+.caixa-perguntas::-webkit-scrollbar {
+    width: 6px;
+}
+
+.caixa-perguntas::-webkit-scrollbar-track {
+    background: #162447;
+    border-radius: 10px;
+}
+
+.caixa-perguntas::-webkit-scrollbar-thumb {
+    background: #e43f5a;
+    border-radius: 10px;
+}
