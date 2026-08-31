@@ -46,18 +46,35 @@ let atual = 0;
 let perguntaAtual;
 
 function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
 
 function mostraAlternativas() {
-    caixaAlternativas.textContent = "";
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa;
+        // Adiciona o evento de clique para avançar
+        botaoAlternativas.addEventListener("click", () => respostaSelecionada());
         caixaAlternativas.appendChild(botaoAlternativas);
     }
+}
+
+function respostaSelecionada() {
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "Fim do Questionário!";
+    caixaAlternativas.textContent = "";
+    textoResultado.textContent = "Obrigado por responder sobre o uso da tecnologia na escola!";
 }
 
 mostraPergunta();
