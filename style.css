@@ -6,9 +6,14 @@
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: radial-gradient(circle at top left, #1e1b4b, #0f172a, #020617);
-    color: #f8fafc;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0d0d11;
+    /* Padrão de fundo em grade cibernética */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,121 +21,119 @@ body {
     padding: 20px;
 }
 
-/* Container Principal com efeito Glassmorphism */
+/* Card Neobrutalista com Sombra Blocado */
 .caixa-principal {
-    background: rgba(30, 41, 59, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    padding: 2.5rem;
+    background: #181820;
+    border: 3px solid #ffe600;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
     width: 100%;
     max-width: 550px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
-                0 0 40px rgba(99, 102, 241, 0.1);
+    /* Sombra projetada sem desfoque (efeito bloco) */
+    box-shadow: 8px 8px 0px #ffe600;
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffe600;
     margin-bottom: 2rem;
-    background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
 }
 
-/* Pergunta */
 .caixa-perguntas {
     font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.5;
-    color: #f1f5f9;
-    margin-bottom: 1.5rem;
-    min-height: 60px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 1.8rem;
+    padding: 12px;
+    background-color: #232330;
+    border-left: 5px solid #a855f7;
+    border-radius: 4px;
 }
 
-/* Container de Alternativas */
 .caixa-alternativas {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
-/* Botões Modernos */
+/* Botões Estilo Cyber-Brutalista */
 .caixa-alternativas button {
     width: 100%;
-    padding: 16px 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
-    color: #e2e8f0;
+    padding: 16px;
+    background-color: #232330;
+    border: 2px solid #a855f7;
+    border-radius: 8px;
+    color: #ffffff;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 700;
     font-family: inherit;
     text-align: left;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    box-shadow: 4px 4px 0px #a855f7;
+    transition: all 0.15s ease;
 }
 
 .caixa-alternativas button:hover {
-    background: rgba(99, 102, 241, 0.15);
-    border-color: rgba(99, 102, 241, 0.4);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.2);
+    background-color: #a855f7;
+    color: #0d0d11;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #ffe600;
 }
 
 .caixa-alternativas button:active {
-    transform: translateY(0);
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #ffe600;
 }
 
-/* Estados de Resposta (Certo / Errado) */
+/* Respostas com Alto Contraste */
 .caixa-alternativas button.correta {
-    background: rgba(16, 185, 129, 0.2) !important;
-    border-color: #10b981 !important;
-    color: #34d399 !important;
-    font-weight: 600;
+    background-color: #00ff66 !important;
+    border-color: #00ff66 !important;
+    color: #000000 !important;
+    box-shadow: 4px 4px 0px #ffffff !important;
 }
 
 .caixa-alternativas button.incorreta {
-    background: rgba(239, 68, 68, 0.2) !important;
-    border-color: #ef4444 !important;
-    color: #f87171 !important;
-    font-weight: 600;
+    background-color: #ff0055 !important;
+    border-color: #ff0055 !important;
+    color: #ffffff !important;
+    box-shadow: 4px 4px 0px #ffffff !important;
 }
 
 /* Caixa de Resultado final */
 .caixa-resultado {
     margin-top: 1.5rem;
-    padding: 20px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    text-align: center;
+    padding: 18px;
+    background-color: #ffe600;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px #a855f7;
 }
 
 .texto-resultado {
     font-size: 1.1rem;
-    color: #cbd5e1;
-    line-height: 1.6;
+    font-weight: 700;
+    color: #0d0d11;
+    text-align: center;
 }
 
-/* Animação Suave */
+/* Animação Seca e Rápida */
 .animar {
-    animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: popIn 0.2s cubic-bezier(0, 0, 0.2, 1);
 }
 
-@keyframes fadeIn {
+@keyframes popIn {
     from {
         opacity: 0;
-        transform: translateY(8px);
+        transform: scale(0.96);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
