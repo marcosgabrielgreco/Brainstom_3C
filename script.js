@@ -52,7 +52,13 @@ function mostraPergunta() {
         return;
     }
     perguntaAtual = perguntas[atual];
+   
+    // Reinicia animação da pergunta
+    caixaPerguntas.style.animation = 'none';
+    caixaPerguntas.offsetHeight; // Triggers reflow
+    caixaPerguntas.style.animation = 'fadeIn 0.4s ease-out';
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+   
     caixaAlternativas.textContent = "";
     mostraAlternativas();
 }
