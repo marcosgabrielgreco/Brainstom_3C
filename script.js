@@ -1,8 +1,10 @@
+
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
+const btnRefazer = document.querySelector(".btn-refazer");
 
 const perguntas = [
     {
@@ -60,7 +62,6 @@ function mostraAlternativas() {
     for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa;
-        // Adiciona o evento de clique para avançar
         botaoAlternativas.addEventListener("click", () => respostaSelecionada());
         caixaAlternativas.appendChild(botaoAlternativas);
     }
@@ -75,6 +76,21 @@ function mostraResultado() {
     caixaPerguntas.textContent = "Fim do Questionário!";
     caixaAlternativas.textContent = "";
     textoResultado.textContent = "Obrigado por responder sobre o uso da tecnologia na escola!";
+   
+    // Exibe a caixa de resultado com o botão de refazer no final
+    caixaResultado.style.display = "block";
 }
 
+function reiniciarQuestionario() {
+    atual = 0;
+    caixaResultado.style.display = "none";
+    mostraPergunta();
+}
+
+// Vincula o evento de clique ao botão refazer
+if (btnRefazer) {
+    btnRefazer.addEventListener("click", reiniciarQuestionario);
+}
+
+// Inicia o questionário
 mostraPergunta();
