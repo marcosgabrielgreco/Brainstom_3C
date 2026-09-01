@@ -1,4 +1,3 @@
-
 const caixaPrincipal = document.querySelector(".caixa-principal");
 const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
@@ -76,8 +75,6 @@ function mostraResultado() {
     caixaPerguntas.textContent = "Fim do Questionário!";
     caixaAlternativas.textContent = "";
     textoResultado.textContent = "Obrigado por responder sobre o uso da tecnologia na escola!";
-   
-    // Exibe a caixa de resultado com o botão de refazer no final
     caixaResultado.style.display = "block";
 }
 
@@ -87,10 +84,9 @@ function reiniciarQuestionario() {
     mostraPergunta();
 }
 
-// Vincula o evento de clique ao botão refazer
 if (btnRefazer) {
     btnRefazer.addEventListener("click", reiniciarQuestionario);
 }
 
-// Inicia o questionário
+caixaResultado.style.display = "none";
 mostraPergunta();

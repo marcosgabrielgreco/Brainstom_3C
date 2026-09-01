@@ -1,32 +1,117 @@
-/* Container de Resultado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #09090e;
+    background-image:
+        linear-gradient(rgba(0, 242, 254, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 254, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.caixa-principal {
+    background: #12111d;
+    border: 3px solid #00f2fe;
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 580px;
+    box-shadow: 8px 8px 0px #4facfe;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00f2fe;
+    margin-bottom: 2rem;
+}
+
+.caixa-perguntas {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 1.8rem;
+    padding: 14px;
+    background-color: #1a1829;
+    border-left: 5px solid #ff0844;
+    border-radius: 6px;
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.caixa-alternativas button {
+    width: 100%;
+    padding: 16px;
+    background-color: #1a1829;
+    border: 2px solid #ff0844;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #ff0844;
+    transition: all 0.15s ease;
+}
+
+.caixa-alternativas button:hover {
+    background-color: #ff0844;
+    color: #ffffff;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px #00f2fe;
+}
+
+.caixa-alternativas button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #00f2fe;
+}
+
 .caixa-resultado {
-    display: none; /* Fica oculto durante o questionário */
+    display: none;
     margin-top: 1.5rem;
     padding: 20px;
-    background-color: #ffe600;
+    background-color: #00f2fe;
     border: 3px solid #ffffff;
     border-radius: 12px;
-    box-shadow: 6px 6px 0px #a855f7;
+    box-shadow: 6px 6px 0px #ff0844;
     animation: popIn 0.3s ease-out;
 }
 
 .texto-resultado {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #0d0d11;
+    color: #09090e;
     text-align: center;
     margin-bottom: 15px;
     line-height: 1.5;
 }
 
-/* Botão de Refazer Moderno */
 .btn-refazer {
     display: block;
     width: 100%;
     padding: 14px 20px;
-    background-color: #0d0d11;
-    color: #ffe600;
-    border: 2px solid #0d0d11;
+    background-color: #09090e;
+    color: #00f2fe;
+    border: 2px solid #09090e;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 700;
@@ -35,59 +120,20 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     box-shadow: 4px 4px 0px #ffffff;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.15s ease;
 }
 
 .btn-refazer:hover {
     background-color: #ffffff;
-    color: #0d0d11;
+    color: #09090e;
     border-color: #ffffff;
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #a855f7;
+    box-shadow: 6px 6px 0px #ff0844;
 }
 
 .btn-refazer:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #a855f7;
-}
-
-<<<<<<< HEAD
-=======
-/* Respostas com Alto Contraste */
-.caixa-alternativas button.correta {
-    background-color: #00ff66 !important;
-    border-color: #00ff66 !important;
-    color: #000000 !important;
-    box-shadow: 4px 4px 0px #ffffff !important;
-}
-
-.caixa-alternativas button.incorreta {
-    background-color: #ff0055 !important;
-    border-color: #ff0055 !important;
-    color: #ffffff !important;
-    box-shadow: 4px 4px 0px #ffffff !important;
-}
-
-/* Caixa de Resultado final */
-.caixa-resultado {
-    margin-top: 1.5rem;
-    padding: 18px;
-    background-color: #ffe600;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    box-shadow: 4px 4px 0px #a855f7;
-}
-
-.texto-resultado {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0d0d11;
-    text-align: center;
-}
-
-/* Animação Seca e Rápida */
-.animar {
-    animation: popIn 0.2s cubic-bezier(0, 0, 0.2, 1);
+    box-shadow: 2px 2px 0px #ff0844;
 }
 
 @keyframes popIn {
@@ -99,86 +145,4 @@
         opacity: 1;
         transform: scale(1);
     }
-}
-/* Botão de Refazer Questionário */
-.btn-refazer {
-    margin-top: 15px;
-    width: 100%;
-    padding: 14px;
-    background-color: #0d0d11;
-    color: #ffe600;
-    border: 2px solid #0d0d11;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: inherit;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px #ffffff;
-    transition: all 0.15s ease;
-}
-
-.btn-refazer:hover {
-    background-color: #ffffff;
-    color: #0d0d11;
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #0d0d11;
-}
-
-.btn-refazer:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #0d0d11;
-}
->>>>>>> 2d6aa791d910c2bc2eac4ec2245fe0066
-/* Caixa de Resultado - Escondida por padrão */
-.caixa-resultado {
-    display: none;
-    margin-top: 1.5rem;
-    padding: 20px;
-    background-color: #ffe600;
-    border: 3px solid #ffffff;
-    border-radius: 12px;
-    box-shadow: 6px 6px 0px #a855f7;
-    animation: popIn 0.3s ease-out;
-}
-
-.texto-resultado {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #0d0d11;
-    text-align: center;
-    margin-bottom: 15px;
-    line-height: 1.5;
-}
-
-/* Botão de Refazer Estilizado */
-.btn-refazer {
-    display: block;
-    width: 100%;
-    padding: 14px 20px;
-    background-color: #0d0d11;
-    color: #ffe600;
-    border: 2px solid #0d0d11;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    font-family: inherit;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px #ffffff;
-    transition: all 0.15s ease;
-}
-
-.btn-refazer:hover {
-    background-color: #ffffff;
-    color: #0d0d11;
-    border-color: #ffffff;
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #a855f7;
-}
-
-.btn-refazer:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px #a855f7;
 }
